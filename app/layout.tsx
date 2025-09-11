@@ -16,6 +16,26 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Little Boss - Birthday & Christening Celebration",
   description: "Join us as our little CEO turns one and receives God's blessing! A special weekend celebrating our Little Boss's birthday party and christening ceremony.",
+  openGraph: {
+    title: "Little Boss - Birthday & Christening Celebration 🎉",
+    description: "Join us as our little CEO turns one and receives God's blessing! A special weekend celebrating our Little Boss's birthday party and christening ceremony. 👶🎂✨",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Little Boss Birthday & Christening Celebration",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Little Boss - Birthday & Christening Celebration 🎉",
+    description: "Join us as our little CEO turns one and receives God's blessing! 👶🎂✨",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({
