@@ -542,16 +542,6 @@ export default function BabyBossCelebration() {
                           >
                             {name}
                           </p>
-                          <p className="text-blue-600 text-sm">
-                            {
-                              [
-                                "Senior Business Advisor",
-                                "Executive Mentor",
-                                "Life Coach & Guide",
-                                "Spiritual Advisor",
-                              ][index]
-                            }
-                          </p>
                         </div>
                       ))}
                     </div>
@@ -581,16 +571,6 @@ export default function BabyBossCelebration() {
                             style={{ animationDelay: `${index * 0.3}s` }}
                           >
                             {name}
-                          </p>
-                          <p className="text-blue-600 text-sm">
-                            {
-                              [
-                                "CEO & Life Mentor",
-                                "Executive Director",
-                                "Strategic Advisor",
-                                "Spiritual Guide",
-                              ][index]
-                            }
                           </p>
                         </div>
                       ))}
