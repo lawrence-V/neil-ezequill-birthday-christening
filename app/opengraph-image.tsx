@@ -70,29 +70,57 @@ export default async function Image() {
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             alignItems: 'center',
-            textAlign: 'center',
-            maxWidth: '900px',
+            justifyContent: 'center',
+            textAlign: 'left',
+            maxWidth: '1100px',
             padding: '40px',
+            gap: '60px',
           }}
         >
-          {/* Baby icon */}
+          {/* Baby photo */}
           <div
             style={{
               backgroundColor: 'rgba(59, 130, 246, 0.1)',
-              borderRadius: '50%',
-              width: '120px',
-              height: '120px',
+              borderRadius: '20px',
+              width: '300px',
+              height: '300px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '30px',
-              border: '4px solid rgba(59, 130, 246, 0.3)',
+              border: '6px solid rgba(255, 255, 255, 0.8)',
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+              overflow: 'hidden',
             }}
           >
-            <span style={{ fontSize: '64px' }}>👶</span>
+            {/* Note: In a real implementation, you would use the actual image */}
+            {/* For now, we'll use a placeholder that represents your image */}
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(135deg, #BFDBFE 0%, #DDD6FE 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '14px',
+              }}
+            >
+              <span style={{ fontSize: '120px' }}>👶</span>
+            </div>
           </div>
+          
+          {/* Text content */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              textAlign: 'left',
+              maxWidth: '500px',
+            }}
+          >
 
           {/* Title */}
           <h1
@@ -138,7 +166,8 @@ export default async function Image() {
             style={{
               marginTop: '30px',
               display: 'flex',
-              gap: '40px',
+              flexDirection: 'column',
+              gap: '10px',
               fontSize: '20px',
               color: '#1E40AF',
               fontWeight: '500',
@@ -146,6 +175,7 @@ export default async function Image() {
           >
             <div>📅 Dec 15-16, 2024</div>
             <div>🎉 Birthday & Blessing</div>
+          </div>
           </div>
         </div>
       </div>

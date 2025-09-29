@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Calendar,
   MapPin,
@@ -400,14 +401,15 @@ export default function BabyBossCelebration() {
               </CardHeader>
               <CardContent className="p-0 relative">
                 <div className="relative aspect-video overflow-hidden rounded-b-lg">
-                  <iframe
-                    src="https://www.youtube.com/embed/YU6sRWdzEMc?si=0&rel=0&modestbranding=1&showinfo=0"
+                  <video
+                    src="/images/video1.mp4"
                     title="Little Boss Celebration Video"
-                    className="w-full h-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
 
                   {/* Optional: Overlay with play button that disappears when video loads */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-200/20 to-sky-300/20 flex items-center justify-center pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -434,8 +436,14 @@ export default function BabyBossCelebration() {
               <CardContent className="p-0 relative">
                 <div className="relative bg-gradient-to-br from-orange-100 via-yellow-50 to-blue-100 aspect-square flex items-center justify-center group-hover:from-purple-100 group-hover:via-pink-50 group-hover:to-blue-100 transition-all duration-500">
                   <div className="text-center text-blue-800">
-                    <div className="w-40 h-40 bg-gradient-to-br from-blue-200 to-sky-300 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl border-4 border-white group-hover:animate-bounce transform hover:scale-110 transition-all duration-300">
-                      <span className="text-5xl animate-pulse">👶</span>
+                    <div className="mb-6">
+                      <Image
+                        src="/images/image4.jpg"
+                        alt="Little Boss CEO"
+                        width={300}
+                        height={300}
+                        className="rounded-xl object-cover shadow-2xl border-4 border-white group-hover:animate-bounce transform hover:scale-105 transition-all duration-300 mx-auto"
+                      />
                     </div>
                     <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 mx-4 shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
                       <p className="text-sm font-medium mb-2 animate-pulse">
@@ -473,33 +481,40 @@ export default function BabyBossCelebration() {
                     className="relative aspect-square bg-gradient-to-br from-blue-100 to-sky-200 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 cursor-pointer overflow-hidden transform hover:rotate-3 group"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-blue-700">
-                        <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:animate-spin">
-                          <span className="text-2xl">
-                            {index === 1 && "👶"}
-                            {index === 2 && "🎂"}
-                            {index === 3 && "👔"}
-                            {index === 4 && "🎈"}
-                          </span>
+                    {index <= 4 ? (
+                      <Image
+                        src={`/images/image${index}.jpg`}
+                        alt={`Little Boss Photo ${index}`}
+                        fill
+                        className="object-cover rounded-xl"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center text-blue-700">
+                          <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:animate-spin">
+                            <span className="text-2xl">🎈</span>
+                          </div>
+                          <p className="text-xs font-medium animate-pulse">
+                            More Photos
+                          </p>
                         </div>
-                        <p className="text-xs font-medium animate-pulse">
-                          Photo {index}
-                        </p>
                       </div>
+                    )}
+                    <div className="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-1 rounded-md text-xs font-medium">
+                      Photo {index}
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-purple-600/0 to-blue-600/0 hover:from-blue-600/10 hover:via-purple-600/10 hover:to-blue-600/10 transition-all duration-300 rounded-xl"></div>
                   </div>
                 ))}
               </div>
-              <div className="text-center mt-6">
+              {/* <div className="text-center mt-6">
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 hover:from-purple-100 hover:to-blue-100 transition-all duration-300 rounded-full px-8 py-4 cursor-pointer shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1">
                   <span className="text-blue-800 font-medium">
                     View All Photos
                   </span>
                   <span className="text-blue-600 animate-bounce">→</span>
                 </div>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </div>

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/images/image1.jpg",
         width: 1200,
         height: 630,
         alt: "Little Boss Birthday & Christening Celebration",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Little Boss - Birthday & Christening Celebration 🎉",
     description: "Join us as our little CEO turns one and receives God's blessing! 👶🎂✨",
-    images: ["/opengraph-image"],
+    images: ["/images/image1.jpg"],
   },
 };
 
