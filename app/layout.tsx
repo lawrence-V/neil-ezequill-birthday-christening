@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Little Boss Celebration",
     images: [
       {
-        url: "/og-image.jpg",
+        url: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Little Boss Birthday & Christening Celebration",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Little Boss - Birthday & Christening Celebration 🎉",
     description: "Join us as our little CEO turns one and receives God's blessing! 👶🎂✨",
-    images: ["/og-image.jpg"],
+    images: [`${baseUrl}/og-image.jpg`],
     creator: "@littleboss",
     site: "@littleboss",
   },
