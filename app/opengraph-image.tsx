@@ -16,12 +16,12 @@ export default async function Image() {
           height: '100%',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#E0F2FE',
           backgroundImage: 'linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 50%, #DDD6FE 100%)',
           fontFamily: 'system-ui',
+          position: 'relative',
         }}
       >
         {/* Background decorations */}
