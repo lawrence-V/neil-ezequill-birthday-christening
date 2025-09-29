@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 const baseUrl = process.env.VERCEL_URL 
   ? `https://${process.env.VERCEL_URL}` 
   : process.env.NODE_ENV === 'production'
-  ? 'https://your-domain.vercel.app' // Replace with your actual domain
+  ? 'https://neil-ezequill-birthday-christening.vercel.app'
   : 'http://localhost:3000';
 
 export const metadata: Metadata = {
