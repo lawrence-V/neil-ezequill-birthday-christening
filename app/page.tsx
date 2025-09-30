@@ -66,12 +66,15 @@ export default function BabyBossCelebration() {
     "Jigs Vince Parinas",
     "Joerey Domingo",
     "Nico Agullana",
-    "Royce Acob",
+    "Royce Acoba",
     "JohnRey Medina",
     "John Roel Ramos",
     "Kevin Garvida",
     "John Neil Mabini",
     "Jerwin Florez",
+    "Carlo Jacinto",
+    "Fernando Jr Viuda",
+    "Brendo Coria",
   ]);
 
   // Ninang names state
@@ -110,6 +113,7 @@ export default function BabyBossCelebration() {
     "Jay ann Cristobal",
     "Maryanne Agullana",
     "Grace Viuda",
+    "Carolyn Agbayani",
   ]);
 
   useEffect(() => {
@@ -191,11 +195,13 @@ export default function BabyBossCelebration() {
             <Baby className="w-16 h-16 text-blue-600 animate-bounce" />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-800 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-4 tracking-tight animate-pulse">
-            Little Boss
+            Neil Ezequiel Toledo Beltran
           </h1>
+
           <div className="text-3xl md:text-4xl bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent mb-6 font-semibold animate-bounce">
             Birthday & Christening Celebration
           </div>
+
           <div className="bg-gradient-to-r from-white/90 to-blue-50/90 backdrop-blur-sm rounded-full px-8 py-4 inline-block shadow-xl border border-white/50 transform hover:scale-105 transition-all duration-300">
             <p className="text-blue-800 text-xl font-medium animate-pulse">
               Join us as our little CEO turns one! 🎂✨
@@ -224,9 +230,7 @@ export default function BabyBossCelebration() {
             <CardContent className="space-y-4 relative">
               <div className="flex items-center space-x-3 text-blue-700 hover:text-purple-600 transition-colors">
                 <Calendar className="w-5 h-5 animate-pulse" />
-                <span className="font-medium">
-                  Saturday, December 15th, 2024
-                </span>
+                <span className="font-medium">Saturday, October 18,2025</span>
               </div>
               <div className="flex items-center space-x-3 text-blue-700 hover:text-purple-600 transition-colors">
                 <Clock
@@ -240,7 +244,9 @@ export default function BabyBossCelebration() {
                   className="w-5 h-5 animate-pulse"
                   style={{ animationDelay: "1s" }}
                 />
-                <span className="font-medium">Family Garden Venue</span>
+                <span className="font-medium">
+                  Villa Fernando Resort Brgy. San Lorenzo, Bangui
+                </span>
               </div>
             </CardContent>
           </Card>
@@ -262,7 +268,7 @@ export default function BabyBossCelebration() {
             <CardContent className="space-y-4 relative">
               <div className="flex items-center space-x-3 text-blue-700 hover:text-purple-600 transition-colors">
                 <Calendar className="w-5 h-5 animate-pulse" />
-                <span className="font-medium">Sunday, December 16th, 2024</span>
+                <span className="font-medium"> Saturday, October 18,2025</span>
               </div>
               <div className="flex items-center space-x-3 text-blue-700 hover:text-purple-600 transition-colors">
                 <Clock
@@ -276,7 +282,10 @@ export default function BabyBossCelebration() {
                   className="w-5 h-5 animate-pulse"
                   style={{ animationDelay: "1s" }}
                 />
-                <span className="font-medium">St. Mary's Church</span>
+                <span className="font-medium">
+                  {" "}
+                  Roman Catholic Brgy San Lorenzo, Bangui
+                </span>
               </div>
             </CardContent>
           </Card>
@@ -297,9 +306,9 @@ export default function BabyBossCelebration() {
             </CardHeader>
             <CardContent className="space-y-4 text-center relative">
               <p className="text-blue-700 font-medium animate-bounce">
-                RSVP by December 10th, 2024
+                RSVP by Saturday, October 18,2025
               </p>
-              <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg p-4 hover:from-purple-100 hover:to-blue-100 transition-all duration-300">
+              {/* <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg p-4 hover:from-purple-100 hover:to-blue-100 transition-all duration-300">
                 <p className="text-blue-800 font-semibold">
                   Contact Information
                 </p>
@@ -308,7 +317,7 @@ export default function BabyBossCelebration() {
                   <br />
                   Email: celebration@babyboss.com
                 </p>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </div>
@@ -345,10 +354,11 @@ export default function BabyBossCelebration() {
               Our Little CEO is Growing Up! 🚀
             </h2>
             <p className="text-xl text-blue-700 leading-relaxed mb-8 hover:text-purple-600 transition-colors">
-              Join us as we celebrate our little boss reaching his first
-              milestone and receiving God's blessing. It's going to be a weekend
-              filled with love, laughter, and precious memories that we'll
-              treasure forever! ✨💙
+              Neil Ezequiel holds a very special place in the family as the
+              first grandson. From the moment he was born, he has brought
+              immense joy, pride, and love to his grandparents and the entire
+              family. Today, we celebrate not just his birthday, but also the
+              wonderful blessing that he is to all of us. ✨💙
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/70 rounded-xl p-6 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 transform hover:scale-110 hover:rotate-2">
