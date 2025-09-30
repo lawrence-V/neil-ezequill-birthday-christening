@@ -53,7 +53,7 @@ export default function BabyBossCelebration() {
     "John Milen Fabi",
     "Aidan Calvan",
     "Jayron Abunaga",
-    "Rj Visitacion",
+    "Arjay Visitacion",
     "Arjay Bernabe",
     "Noel Valdez",
     "Ruel Ryan Agustin",
@@ -75,6 +75,7 @@ export default function BabyBossCelebration() {
     "Carlo Jacinto",
     "Fernando Jr Viuda",
     "Brendo Coria",
+    "Erickson Sampayan",
   ]);
 
   // Ninang names state
@@ -106,7 +107,7 @@ export default function BabyBossCelebration() {
     "Ciara Jamuyot",
     "Diane Agustin",
     "Mary Feith Agullana",
-    "Erickson Sampayan",
+
     "Maryhean Gunsi Domingo",
     "Marigold Quatchon",
     "Mildred Jimenez",
@@ -237,7 +238,7 @@ export default function BabyBossCelebration() {
                   className="w-5 h-5 animate-pulse"
                   style={{ animationDelay: "0.5s" }}
                 />
-                <span className="font-medium">2:00 PM - 6:00 PM</span>
+                <span className="font-medium">3:00 PM</span>
               </div>
               <div className="flex items-center space-x-3 text-blue-700 hover:text-purple-600 transition-colors">
                 <MapPin
@@ -275,7 +276,7 @@ export default function BabyBossCelebration() {
                   className="w-5 h-5 animate-pulse"
                   style={{ animationDelay: "0.5s" }}
                 />
-                <span className="font-medium">10:00 AM - 12:00 PM</span>
+                <span className="font-medium">2:30 PM</span>
               </div>
               <div className="flex items-center space-x-3 text-blue-700 hover:text-purple-600 transition-colors">
                 <MapPin
