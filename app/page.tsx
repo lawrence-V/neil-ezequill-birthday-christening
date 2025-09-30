@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { SimpleBirthdayMusic } from "@/components/SimpleBirthdayMusic";
 
 export default function BabyBossCelebration() {
   const [floatingElements, setFloatingElements] = useState<
@@ -40,6 +41,8 @@ export default function BabyBossCelebration() {
       duration: number;
     }[]
   >([]);
+
+  // Simple birthday music - no complex logic needed
 
   // Ninong names state
   const [ninongNames, setNinongNames] = useState([
@@ -721,6 +724,9 @@ export default function BabyBossCelebration() {
           </div>
         </div>
       </footer>
+
+      {/* Simple Birthday Music Component */}
+      <SimpleBirthdayMusic />
     </div>
   );
 }
