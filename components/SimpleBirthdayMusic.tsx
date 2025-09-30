@@ -168,7 +168,7 @@ export const SimpleBirthdayMusic: React.FC = () => {
       </div>
 
       {/* Simple Audio Controls */}
-      <div className="fixed bottom-4 right-4 z-50">
+      {/* <div className="fixed bottom-4 right-4 z-50">
         <div className="bg-white/90 backdrop-blur-md rounded-lg shadow-xl p-3">
           <div className="flex items-center space-x-3">
             <button
@@ -206,7 +206,7 @@ export const SimpleBirthdayMusic: React.FC = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Scroll Hint */}
       {/* {!hasStarted && (
