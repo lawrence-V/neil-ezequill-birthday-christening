@@ -1,20 +1,27 @@
-# Test Audio Instructions
+# Baby Boss Audio Instructions
 
-## Quick Test (No Audio File Needed)
+## Current Setup
 
-The app includes a built-in "Happy Birthday" melody generator that works without any audio files! Just:
+The app is now configured to play **`the_baby_boss_2017.mp3`** - the perfect soundtrack for Neil Ezequiel's Baby Boss themed birthday!
 
-1. Run `npm run dev`
-2. Open http://localhost:3001
-3. Scroll down (even just a tiny bit)
-4. You should hear the birthday melody!
+## Quick Test
 
-## How to Add Your Own Music
+1. Place your `the_baby_boss_2017.mp3` file in this `/public/audio/` folder
+2. Run `npm run dev`
+3. Open http://localhost:3001
+4. Scroll down (even just a tiny bit)
+5. You should hear the Baby Boss music! 🎧
 
-1. Find a birthday song you like (MP3, WAV, or OGG format)
-2. Rename it to: `birthday-theme.mp3` 
+## No Audio File?
+
+If `the_baby_boss_2017.mp3` is not found, the app will play a built-in "Happy Birthday" melody as fallback.
+
+## How to Change the Music
+
+1. Find your Baby Boss soundtrack or any birthday song (MP3, WAV, or OGG format)
+2. Rename it to: `the_baby_boss_2017.mp3` 
 3. Place it in this `/public/audio/` folder
-4. Refresh the page - your music will play instead of the fallback melody!
+4. Refresh the page - your Baby Boss music will play!
 
 ## Current Implementation
 

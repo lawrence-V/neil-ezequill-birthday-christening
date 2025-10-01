@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { audioFallback } from '@/utils/audioFallback';
+import { useEffect, useRef, useState } from "react";
+import { audioFallback } from "@/utils/audioFallback";
 
 interface UseScrollAudioProps {
   audioSrc: string;
@@ -14,7 +14,7 @@ export const useScrollAudio = ({
   scrollThreshold = 100,
   volume = 0.3,
   loop = true,
-  enableFallback = true
+  enableFallback = true,
 }: UseScrollAudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -45,12 +45,12 @@ export const useScrollAudio = ({
     };
 
     const handleLoadError = (e: Event) => {
-      console.warn('Failed to load birthday music file:', audioSrc);
+      console.warn("Failed to load birthday music file:", audioSrc);
       setIsLoaded(false);
-      setAudioError('Failed to load audio file');
-      
+      setAudioError("Failed to load audio file");
+
       if (enableFallback && audioFallback.isSupported()) {
-        console.info('Using fallback birthday melody');
+        console.info("Using fallback birthday melody");
         setUseFallback(true);
         setIsLoaded(true); // Consider fallback as "loaded"
         setAudioError(null);
@@ -58,31 +58,31 @@ export const useScrollAudio = ({
     };
 
     // Set up event listeners before setting src
-    audio.addEventListener('canplay', handleCanPlay);
-    audio.addEventListener('canplaythrough', handleCanPlay);
-    audio.addEventListener('error', handleLoadError);
-    audio.addEventListener('abort', handleLoadError);
+    audio.addEventListener("canplay", handleCanPlay);
+    audio.addEventListener("canplaythrough", handleCanPlay);
+    audio.addEventListener("error", handleLoadError);
+    audio.addEventListener("abort", handleLoadError);
 
     // Start loading the audio
     audio.src = audioSrc;
-    audio.preload = 'auto';
-    
+    audio.preload = "auto";
+
     // Set attributes that might help with autoplay
-    audio.setAttribute('autoplay', 'true');
-    audio.setAttribute('muted', 'false'); // We want sound
-    audio.crossOrigin = 'anonymous';
+    audio.setAttribute("autoplay", "true");
+    audio.setAttribute("muted", "false"); // We want sound
+    audio.crossOrigin = "anonymous";
 
     // Test if file exists by trying to load it
     audio.load();
 
     // Cleanup
     return () => {
-      audio.removeEventListener('canplay', handleCanPlay);
-      audio.removeEventListener('canplaythrough', handleCanPlay);
-      audio.removeEventListener('error', handleLoadError);
-      audio.removeEventListener('abort', handleLoadError);
+      audio.removeEventListener("canplay", handleCanPlay);
+      audio.removeEventListener("canplaythrough", handleCanPlay);
+      audio.removeEventListener("error", handleLoadError);
+      audio.removeEventListener("abort", handleLoadError);
       audio.pause();
-      audio.src = '';
+      audio.src = "";
       if (useFallback) {
         audioFallback.stop();
       }
@@ -93,37 +93,40 @@ export const useScrollAudio = ({
   useEffect(() => {
     if (isLoaded && !autoPlayTriggered) {
       setAutoPlayTriggered(true);
-      
+
       // Attempt to start playing immediately
       const attemptAutoPlay = () => {
         if (useFallback) {
-          audioFallback.play(volume)
+          audioFallback
+            .play(volume)
             .then(() => {
               setIsPlaying(true);
-              console.log('🎵 Birthday music auto-started on page load! (fallback)');
             })
-            .catch(error => {
-              console.warn('Auto-play blocked by browser:', error);
+            .catch((error) => {
+              console.warn("Auto-play blocked by browser:", error);
               // Fallback will be triggered by scroll
             });
         } else if (audioRef.current) {
-          audioRef.current.play()
+          audioRef.current
+            .play()
             .then(() => {
               setIsPlaying(true);
-              console.log('🎵 Birthday music auto-started on page load!');
             })
-            .catch(error => {
-              console.warn('Auto-play blocked by browser:', error);
+            .catch((error) => {
+              console.warn("Auto-play blocked by browser:", error);
               // Try fallback if enabled
               if (enableFallback && audioFallback.isSupported()) {
                 setUseFallback(true);
-                audioFallback.play(volume)
+                audioFallback
+                  .play(volume)
                   .then(() => {
                     setIsPlaying(true);
-                    console.log('🎵 Birthday music auto-started with fallback!');
                   })
-                  .catch(fallbackError => {
-                    console.warn('Fallback auto-play also blocked:', fallbackError);
+                  .catch((fallbackError) => {
+                    console.warn(
+                      "Fallback auto-play also blocked:",
+                      fallbackError
+                    );
                   });
               }
             });
@@ -142,80 +145,98 @@ export const useScrollAudio = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      
+
       // Trigger on ANY scroll if music isn't already playing
       if (scrollY > scrollThreshold && !hasScrolled && isLoaded && !isPlaying) {
         setHasScrolled(true);
-        console.log(`🎵 Scroll detected! (${scrollY}px) - Starting birthday music!`);
-        
+
         // Try to start playing when user scrolls (backup method)
         const startMusic = () => {
           if (useFallback) {
             // Use fallback audio
-            audioFallback.play(volume)
+            audioFallback
+              .play(volume)
               .then(() => {
                 setIsPlaying(true);
-                console.log('🎵 Birthday music started on scroll! (fallback)');
               })
-              .catch(error => {
-                console.warn('Could not play fallback birthday music on scroll:', error);
+              .catch((error) => {
+                console.warn(
+                  "Could not play fallback birthday music on scroll:",
+                  error
+                );
               });
           } else if (audioRef.current) {
             // Use regular audio file
-            audioRef.current.play()
+            audioRef.current
+              .play()
               .then(() => {
                 setIsPlaying(true);
-                console.log('🎵 Birthday music started on scroll!');
               })
-              .catch(error => {
-                console.warn('Could not play birthday music on scroll:', error);
+              .catch((error) => {
+                console.warn("Could not play birthday music on scroll:", error);
                 // Try fallback if regular audio fails
                 if (enableFallback && audioFallback.isSupported()) {
                   setUseFallback(true);
-                  audioFallback.play(volume)
+                  audioFallback
+                    .play(volume)
                     .then(() => {
                       setIsPlaying(true);
-                      console.log('🎵 Birthday music started on scroll! (fallback after error)');
                     })
-                    .catch(fallbackError => {
-                      console.warn('Fallback audio also failed on scroll:', fallbackError);
+                    .catch((fallbackError) => {
+                      console.warn(
+                        "Fallback audio also failed on scroll:",
+                        fallbackError
+                      );
                     });
                 }
               });
           }
         };
-        
+
         // Start music on scroll
         startMusic();
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollThreshold, hasScrolled, isLoaded, isPlaying, useFallback, volume, enableFallback]);
+  }, [
+    scrollThreshold,
+    hasScrolled,
+    isLoaded,
+    isPlaying,
+    useFallback,
+    volume,
+    enableFallback,
+  ]);
 
   const play = () => {
     if (!isLoaded) return;
-    
+
     if (useFallback) {
-      audioFallback.play(volume)
+      audioFallback
+        .play(volume)
         .then(() => setIsPlaying(true))
-        .catch(error => console.warn('Could not play fallback audio:', error));
+        .catch((error) =>
+          console.warn("Could not play fallback audio:", error)
+        );
     } else if (audioRef.current) {
-      audioRef.current.play()
+      audioRef.current
+        .play()
         .then(() => setIsPlaying(true))
-        .catch(error => {
-          console.warn('Could not play audio:', error);
+        .catch((error) => {
+          console.warn("Could not play audio:", error);
           // Try fallback if regular audio fails
           if (enableFallback && audioFallback.isSupported()) {
             setUseFallback(true);
-            audioFallback.play(volume)
+            audioFallback
+              .play(volume)
               .then(() => setIsPlaying(true))
-              .catch(fallbackError => {
-                console.warn('Fallback audio also failed:', fallbackError);
+              .catch((fallbackError) => {
+                console.warn("Fallback audio also failed:", fallbackError);
               });
           }
         });
@@ -233,7 +254,7 @@ export const useScrollAudio = ({
 
   const setVolume = (newVolume: number) => {
     const clampedVolume = Math.max(0, Math.min(1, newVolume));
-    
+
     if (useFallback) {
       audioFallback.setVolume(clampedVolume);
     } else if (audioRef.current) {
@@ -252,6 +273,6 @@ export const useScrollAudio = ({
     play,
     pause,
     setVolume,
-    audioRef: audioRef.current
+    audioRef: audioRef.current,
   };
 };

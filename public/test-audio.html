@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Test</title>
+</head>
+<body>
+    <h1>Baby Boss Audio Test</h1>
+    <p>Testing the MP3 file:</p>
+    
+    <audio controls preload="auto" id="testAudio">
+        <source src="/audio/the_baby_boss_2017.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <br><br>
+    <button onclick="testPlay()" style="padding: 10px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px;">🎵 Test Play MP3</button>
+    <button onclick="checkFile()" style="padding: 10px; margin: 5px; background: #2196F3; color: white; border: none; border-radius: 5px;">🔍 Check File</button>
+    <button onclick="autoTest()" style="padding: 10px; margin: 5px; background: #FF9800; color: white; border: none; border-radius: 5px;">🤖 Auto Test</button>
+    
+    <div id="log"></div>
+
+    <script>
+        function log(message) {
+            document.getElementById('log').innerHTML += '<br>' + message;
+            console.log(message);
+        }
+        
+        function testPlay() {
+            const audio = document.getElementById('testAudio');
+            log('🎵 Attempting to play...');
+            audio.play()
+                .then(() => log('✅ Success: MP3 is playing!'))
+                .catch(error => log('❌ Error: ' + error.message));
+        }
+        
+        function checkFile() {
+            const audio = new Audio('/audio/the_baby_boss_2017.mp3');
+            
+            audio.addEventListener('loadstart', () => log('📁 Loading started'));
+            audio.addEventListener('canplay', () => log('✅ Can play'));
+            audio.addEventListener('canplaythrough', () => log('✅ Can play through'));
+            audio.addEventListener('error', (e) => log('❌ Error loading: ' + e.message));
+            
+            audio.load();
+            log('🔍 Checking file: ' + audio.src);
+        }
+        
+        function autoTest() {
+            log('🤖 Running automatic test...');
+            
+            // Test direct file access
+            fetch('/audio/the_baby_boss_2017.mp3', { method: 'HEAD' })
+                .then(response => {
+                    log('🌐 File access: ' + response.status + ' ' + response.statusText);
+                    if (response.ok) {
+                        log('✅ File is accessible');
+                        // Try to create and play audio
+                        const audio = new Audio('/audio/the_baby_boss_2017.mp3');
+                        audio.volume = 0.3;
+                        audio.addEventListener('canplay', () => {
+                            log('✅ Audio ready - attempting autoplay...');
+                            audio.play()
+                                .then(() => log('🎵 SUCCESS: MP3 is playing!'))
+                                .catch(err => log('❌ Autoplay blocked: ' + err.message));
+                        });
+                        audio.load();
+                    } else {
+                        log('❌ File not accessible');
+                    }
+                })
+                .catch(error => log('❌ Network error: ' + error.message));
+        }
+        
+        // Auto-check on page load
+        window.onload = function() {
+            checkFile();
+        }
+    </script>
+</body>
+</html>

@@ -699,6 +699,41 @@ export default function BabyBossCelebration() {
               </ul>
             </CardContent>
           </Card>
+
+          <Card className="bg-white/70 backdrop-blur-sm border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mt-6">
+            <CardHeader>
+              <CardTitle className="text-2xl text-purple-800 flex items-center hover:text-blue-600 transition-colors">
+                <span className="w-6 h-6 mr-3 animate-bounce">👔</span>
+                Dress Code
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-purple-700">
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse"></span>
+                  <span>
+                    Keep it casual, but please wear
+                    <span className="font-semibold text-blue-800"> black</span>,
+                    <span className="font-semibold text-gray-800"> white</span>,
+                    or
+                    <span className="font-semibold text-sky-600">
+                      {" "}
+                      light blue
+                    </span>
+                    to match our <span className="italic">Boss Baby</span> theme
+                    🎩👶
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse"></span>
+                  <span>
+                    Get ready for fun, laughter, and a little business-baby
+                    mischief 🎉
+                  </span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
 
