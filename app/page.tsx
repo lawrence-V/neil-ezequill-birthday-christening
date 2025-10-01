@@ -91,7 +91,7 @@ export default function BabyBossCelebration() {
     "Rose Jay Mabini",
     "Arian Joy Ramirez",
     "Navin Santiago",
-    "Laurie Ann Rarada",
+    "Laurie Ann Ranada",
     "Sednie Kaye Tauyan",
     "Crislen Estuesta",
     "Lowella Ranada",
