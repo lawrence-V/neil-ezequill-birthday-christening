@@ -79,6 +79,8 @@ export default function BabyBossCelebration() {
     "Fernando Jr Viuda",
     "Brendo Coria",
     "Erickson Sampayan",
+    "Juanito Jr Nacino",
+    "Rodolfo III Agullana",
   ]);
 
   // Ninang names state
@@ -118,6 +120,7 @@ export default function BabyBossCelebration() {
     "Maryanne Agullana",
     "Grace Viuda",
     "Carolyn Agbayani",
+    "Froilyn Alayao",
   ]);
 
   useEffect(() => {
